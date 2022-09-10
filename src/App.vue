@@ -3,12 +3,13 @@
     <header>
       <Navbar/>
     </header>
-    <drop-down/>
+    <drop-down :data="names"/>
   </div>
 </template>
 
 <script>
 import Navbar from './components/Navbar.vue'
+import {ref} from 'vue';
 
 
 
@@ -16,7 +17,21 @@ export default {
   name: 'App',
   components: {
     Navbar
+  },
+  setup(){
+    const names = ref([
+      {value: 1,label:'Rahim'},
+      {value: 2,label:'Karim'},
+      {value: 3,label:'Salam'},
+      {value: 4,label:'Rafiq'},
+      {value: 5,label:'Kalam'},
+      {value: 6,label:'Jobbar'},
+    ]);
+    return{
+      names
+    };
   }
+
 }
 </script>
 
